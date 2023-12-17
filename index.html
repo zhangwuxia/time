@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨年</title>
+    <script>
+        
+        const time = new Date();
+        const year = time.getFullYear();
+        const month = time.getMonth()+1;
+        const day = time.getDate();
+        const h =time.getHours();
+        const f = time.getMinutes();
+        const s = time.getSeconds();
+        const now_time=year+"年"+month+"月"+day+"日"+h+"时"+f+"分"+s+"秒";
+        var s_s=0;
+        switch(month){
+            case 1:{s_s=31;break;}
+            case 2:{s_s=30;break;}
+            case 3:{s_s=31;break;}
+            case 4:{s_s=30;break;}
+            case 5:{s_s=31;break;}
+            case 6:{s_s=30;break;}
+            case 7:{s_s=31;break;}
+            case 8:{s_s=31;break;}
+            case 9:{s_s=30;break;}
+            case 10:{s_s=31;break;}
+            case 11:{s_s=30;break;}
+            case 12:{s_s=31;break;}
+        }
+        const s_time = (12-month)+"个月"+(s_s-day-1)+"天"+(24-h-1)+"小时"+(60-f-1)+"分"+(60-s-1)+"秒";
+    </script>
+    <style>
+    .time
+    {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="time">
+    <button onclick="document.write('现在时间是——'+now_time)">现在时间(不是实时)</button>
+    <button onclick="document.write('距离跨年的时间是——'+s_time)">距离跨年的时间</button>
+    </div>
+</body>
+</html>
